@@ -13,9 +13,8 @@ class Repository {
 
   Future<ItemModel> fetchItem(int id) async {
     ItemModel? item;
-    dynamic source;
 
-    for (source in sources) {
+    for (Source source in sources) {
       item = await source.fetchItem(id);
 
       if (item != null) {
